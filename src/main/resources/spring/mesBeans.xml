@@ -4,5 +4,11 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Declarez votre bean client -->
+	<beans>
+		<bean id="voiture1" class="com.exo.beans.Voiture">
+			<property name="marque" value="Opel" />
+			<property name="modele" value="Grandland X" />
+		</bean>
+	</beans>
 
 </beans>

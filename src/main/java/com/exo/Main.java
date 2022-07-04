@@ -1,5 +1,6 @@
 package com.exo;
 
+import com.exo.beans.Voiture;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeansException;
@@ -33,9 +34,9 @@ public final class Main {
 			appContext = new ClassPathXmlApplicationContext("spring/mesBeans.xml");
 
 			// Recuperation de notre instance de client
-			// Client cl1 = (Client) appContext.getBean("client1");
-			// Affichage
-			// Main.LOG.debug(cl1.toString());
+			Voiture v1 = appContext.getBean(Voiture.class);
+			Main.LOG.debug(v1.toString());
+
 		} catch (BeansException e) {
 			Main.LOG.fatal("Erreur", e);
 			System.exit(-1);
