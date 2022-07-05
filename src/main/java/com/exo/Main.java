@@ -1,5 +1,6 @@
 package com.exo;
 
+import com.exo.beans.Client;
 import com.exo.beans.Voiture;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,9 +34,23 @@ public final class Main {
 			// Chargement du fichier
 			appContext = new ClassPathXmlApplicationContext("spring/mesBeans.xml");
 
-			// Recuperation de notre instance de client
+
+			// Recuperation de notre instance de Voiture
 			Voiture v1 = appContext.getBean(Voiture.class);
 			Main.LOG.debug(v1.toString());
+
+			// Chargement des clients
+			Client c1 = appContext.getBean("client1", Client.class);
+			Main.LOG.debug(c1.toString());
+
+			Client c2 = appContext.getBean("client2", Client.class);
+			Main.LOG.debug(c2.toString());
+
+			Client c3 = appContext.getBean("client3", Client.class);
+			Main.LOG.debug(c3.toString());
+
+			Client c4 = appContext.getBean("client4", Client.class);
+			Main.LOG.debug(c4.toString());
 
 		} catch (BeansException e) {
 			Main.LOG.fatal("Erreur", e);
