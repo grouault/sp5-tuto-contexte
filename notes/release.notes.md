@@ -10,3 +10,9 @@
 ### injections de dépendances
 - par les modificateurs
 - par le constructeur
+
+### injections des listes
+- sans spécification de type
+- avec spécification de type:
+  - ArrayList
+  - Vector

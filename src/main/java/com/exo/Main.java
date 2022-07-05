@@ -49,9 +49,6 @@ public final class Main {
 			Client c3 = appContext.getBean("client3", Client.class);
 			Main.LOG.debug(c3.toString());
 
-			Client c4 = appContext.getBean("client4", Client.class);
-			Main.LOG.debug(c4.toString());
-
 		} catch (BeansException e) {
 			Main.LOG.fatal("Erreur", e);
 			System.exit(-1);

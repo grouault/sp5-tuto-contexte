@@ -58,7 +58,7 @@ public class Adresse {
 
     @Override
     public String toString() {
-        return "Adresse{" +
+        return "Adresse={" +
                 "codePostal='" + codePostal + '\'' +
                 ", rue='" + rue + '\'' +
                 ", ville='" + ville + '\'' +

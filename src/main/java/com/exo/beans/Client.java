@@ -1,5 +1,7 @@
 package com.exo.beans;
 
+import java.util.List;
+
 public class Client {
 
     private String nom;
@@ -8,16 +10,16 @@ public class Client {
 
     private int age;
 
-    private Adresse adresse;
+    private List<Adresse> adresses;
 
     public Client() {
     }
 
-    public Client(String nom, String prenom, int age, Adresse adresse) {
+    public Client(String nom, String prenom, int age, List<Adresse> adresses) {
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;
-        this.adresse = adresse;
+        this.adresses = adresses;
     }
 
     public String getNom() {
@@ -47,22 +49,22 @@ public class Client {
         return this;
     }
 
-    public Adresse getAdresse() {
-        return adresse;
+    public List<Adresse> getAdresses() {
+        return adresses;
     }
 
-    public Client setAdresse(Adresse adresse) {
-        this.adresse = adresse;
+    public Client setAdresses(List<Adresse> adresses) {
+        this.adresses = adresses;
         return this;
     }
 
     @Override
     public String toString() {
-        return "Client{" +
+        return "Client={" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", age=" + age +
-                ", adresse=" + adresse.toString() +
+                ", adresses=" + this.getAdresses() +
                 '}';
     }
 
