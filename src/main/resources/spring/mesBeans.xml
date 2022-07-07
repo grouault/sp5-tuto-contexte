@@ -3,6 +3,24 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+	<!--
+	chargement des PROPERTIES -->
+
+	<!--
+
+	PropertyPlaceholderConfigurer -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="spring/adresses.properties"/>
+	</bean>
+
+	<!--
+
+	Property Factory Bean -->
+	<bean id="dataBaseProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="spring/database.properties" />
+	</bean>
+
 	<!-- Declarez votre bean client -->
 	<beans>
 
@@ -12,10 +30,10 @@
 		</bean>
 
 		<bean id="adresse1" class="com.exo.beans.Adresse">
-			<property name="rue" value="1 rue Luc Aubrac" />
-			<property name="codePostal" value="90260" />
-			<property name="ville" value="Juvisy" />
-			<property name="pays" value="France" />
+			<property name="rue" value="${addr1.rue}" />
+			<property name="codePostal" value="${addr1.codePostal}" />
+			<property name="ville" value="${addr1.ville}" />
+			<property name="pays" value="${addr1.pays}" />
 		</bean>
 
 		<bean id="adresse2" class="com.exo.beans.Adresse">
@@ -82,6 +100,18 @@
 					</constructor-arg>
 				</bean>
 			</property>
+		</bean>
+		<!--
+
+		MAP: ville ==> client -->
+		<bean id="mapVilles" class="java.util.HashMap">
+			<constructor-arg>
+				<map>
+					<entry key="rennes"><ref bean="client3" /></entry>
+					<entry key="paris"><ref bean="client1" /></entry>
+					<entry key="versailles"><ref bean="client2" /></entry>
+				</map>
+			</constructor-arg>
 		</bean>
 
 	</beans>

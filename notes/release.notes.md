@@ -16,3 +16,8 @@
 - avec spécification de type:
   - ArrayList
   - Vector
+
+### injection avec Properties
+- injection d'une Map (oublie de la branche injections des listes)
+- properties : PropertyPlaceholder
+- properties : PropertiesFactoryBean
