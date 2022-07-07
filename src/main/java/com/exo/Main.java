@@ -62,8 +62,6 @@ public final class Main {
 			Main.LOG.debug("bdd.url = " + dataBaseConfig.getProperty("bdd.url"));
 			Main.LOG.debug("-- Config DATABASE FIN--");
 
-			Main.LOG.debug("test url = " + c2.getBddUrl());
-
 		} catch (BeansException e) {
 			Main.LOG.fatal("Erreur", e);
 			System.exit(-1);

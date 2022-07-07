@@ -21,3 +21,7 @@
 - injection d'une Map (oublie de la branche injections des listes)
 - properties : PropertyPlaceholder
 - properties : PropertiesFactoryBean
+
+### init -destroy
+- client : gestion en xml
+- adresse : gestion avec les annotations

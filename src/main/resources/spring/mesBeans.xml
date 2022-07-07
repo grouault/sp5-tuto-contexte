@@ -4,6 +4,9 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+	<!-- Indiquez à Spring que vous faites usage des annotations @PreDestroy et @PostConstruct   -->
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
 	<!--
 	chargement des PROPERTIES -->
 
@@ -52,7 +55,8 @@
 			</constructor-arg>
 		</bean>
 
-		<bean id="client1" class="com.exo.beans.Client">
+		<bean id="client1" class="com.exo.beans.Client"
+			init-method="initialiser" destroy-method="detruire">
 			<property name="nom" value="Rouault" />
 			<property name="prenom" value="Gildas" />
 			<property name="age" value="45" />

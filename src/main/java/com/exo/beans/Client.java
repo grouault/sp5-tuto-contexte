@@ -2,7 +2,12 @@ package com.exo.beans;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Client {
+
+    private final static Logger LOG = LogManager.getLogger();
 
     private String nom;
 
@@ -20,6 +25,14 @@ public class Client {
         this.prenom = prenom;
         this.age = age;
         this.adresses = adresses;
+    }
+
+    public void initialiser() {
+        Client.LOG.info("Dans mon init du client {}", this);
+    }
+
+    public void detruire() {
+        Client.LOG.info("Dans mon destroy du client {}", this);
     }
 
     public String getNom() {

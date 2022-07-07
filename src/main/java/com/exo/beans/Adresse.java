@@ -1,6 +1,13 @@
 package com.exo.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Adresse {
+
+    private final static Logger LOG = LogManager.getLogger();
 
     private String codePostal;
 
@@ -18,6 +25,16 @@ public class Adresse {
         this.rue = rue;
         this.ville = ville;
         this.pays = pays;
+    }
+
+    @PostConstruct
+    public void initialiser() {
+        Adresse.LOG.info("Dans le init de mon adresse {}", this);
+    }
+
+    @PreDestroy
+    public void detruire() {
+        Adresse.LOG.info("Dans le destroy de mon adresse {}", this);
     }
 
     public String getCodePostal() {
